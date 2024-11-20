@@ -1,0 +1,1 @@
+cxx_test(gale_shapley_test "gale_shapley_test.cxx;gale_shapley.cxx")

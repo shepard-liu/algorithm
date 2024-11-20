@@ -1,0 +1,10 @@
+{
+    "clangd.path": "/usr/bin/clangd-15",
+    "c-cpp-flylint.standard": [
+        "c++17"
+    ],
+    "c-cpp-flylint.clang.executable": "/usr/bin/clang",
+    "c-cpp-flylint.clang.extraArgs": [
+        "-Wno-c++17-extensions"
+    ]
+}
