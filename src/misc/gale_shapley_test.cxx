@@ -80,6 +80,8 @@ void test_gale_shapley(const pref_table& init, const pref_table& pass) {
     std::cout << "Passive preference table:\n";
     std::cout << pass;
     std::cout << "Answers:\n";
+
+    std::sort(ans.begin(), ans.end());
     for (const auto& match : ans) {
         std::cout << match << "\n";
     }
@@ -89,6 +91,8 @@ void test_gale_shapley(const pref_table& init, const pref_table& pass) {
 }
 
 TEST(misc, gale_shapley) {
+    test_gale_shapley({{0, 1, 2}, {1, 2, 0}, {1, 0, 2}},
+                      {{1, 2, 0}, {2, 0, 1}, {0, 1, 2}});
     test_gale_shapley({{2, 0, 1}, {0, 1, 2}, {1, 2, 0}},
                       {{0, 1, 2}, {1, 0, 2}, {2, 1, 0}});
     test_gale_shapley({{0, 1, 2}, {0, 1, 2}, {0, 1, 2}},
@@ -100,7 +104,7 @@ TEST(misc, gale_shapley) {
     std::vector<size_t> indexes(n);
     std::iota(indexes.begin(), indexes.end(), 0);
 
-    for (size_t seed = 0; seed < 100; ++seed) {
+    for (size_t seed = 0; seed < 1000; ++seed) {
         pref_table init;
         pref_table pass;
         init.reserve(n);
