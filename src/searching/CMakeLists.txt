@@ -1,0 +1,1 @@
+cxx_test(binary_search_test "binary_search_test.cxx;binary_search.cxx")

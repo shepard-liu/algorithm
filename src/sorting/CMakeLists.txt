@@ -1,3 +1,5 @@
-cxx_test(bubble_sort_test "bubble_sort_test.cxx;bubble_sort.cxx;test_utils.cxx")
-cxx_test(insertion_sort_test "insertion_sort_test.cxx;insertion_sort.cxx;test_utils.cxx")
-cxx_test(selection_sort_test "selection_sort_test.cxx;selection_sort.cxx;test_utils.cxx")
+cxx_test(bubble_sort_test "bubble_sort_test.cxx;bubble_sort.cxx")
+cxx_test(insertion_sort_test "insertion_sort_test.cxx;insertion_sort.cxx")
+cxx_test(selection_sort_test "selection_sort_test.cxx;selection_sort.cxx")
+cxx_test(merge_sort_test "merge_sort_test.cxx;merge_sort.cxx")
+cxx_test(quick_sort_test "quick_sort_test.cxx;quick_sort.cxx")
