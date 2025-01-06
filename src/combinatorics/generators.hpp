@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <iterator>
 #include <stdexcept>
+#include <type_traits>
 #include <vector>
 
 class Combinations {
@@ -26,25 +27,11 @@ class Combinations {
        public:
         reference operator*() { return comb->current; }
 
-        Combinations_iterator operator++(int) {
-            if (!comb->forward()) {
-                this->comb = nullptr;
-            }
-            return *this;
-        }
+        Combinations_iterator operator++();
 
-        Combinations_iterator operator++() {
-            (*this)++;
-            return *this;
-        }
+        bool operator==(const Combinations_iterator& that);
 
-        bool operator==(const Combinations_iterator& that) {
-            return this->comb == that.comb;
-        }
-
-        bool operator!=(const Combinations_iterator& that) {
-            return this->comb != that.comb;
-        }
+        bool operator!=(const Combinations_iterator& that);
     };
 
     Combinations_iterator iterator{this};
@@ -52,10 +39,50 @@ class Combinations {
    public:
     Combinations(uint64_t _n, uint64_t _r);
 
-    Combinations_iterator begin() { return this->iterator; }
+    Combinations_iterator& it() { return this->iterator; }
 
     Combinations_iterator end() { return Combinations_iterator(nullptr); }
 
    private:
     bool forward();
+};
+
+class Permutations {
+   public:
+    typedef std::vector<size_t> R_permutation;
+
+   private:
+    R_permutation current;
+    Combinations comb;
+
+    class Permutations_iterator
+        : public std::iterator<std::forward_iterator_tag, const R_permutation> {
+        Permutations* perm;
+        friend class Permutations;
+
+       private:
+        explicit Permutations_iterator(Permutations* _perm) : perm(_perm) {}
+
+       public:
+        reference operator*() { return perm->current; }
+
+        Permutations_iterator operator++();
+
+        bool operator==(const Permutations_iterator& that);
+
+        bool operator!=(const Permutations_iterator& that);
+    };
+
+    Permutations_iterator iterator{this};
+
+    bool forward();
+
+    void init_from_combination(const Combinations::R_combination& cb);
+
+   public:
+    Permutations(uint64_t _n, uint64_t _r);
+
+    Permutations_iterator& it();
+
+    Permutations_iterator end() { return Permutations_iterator{nullptr}; }
 };
