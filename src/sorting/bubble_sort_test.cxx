@@ -1,6 +1,6 @@
 #include "bubble_sort.hpp"
 
-#include "test_utils.hpp"
+#include "../test_utils.hpp"
 
 TEST(sorting, bubble_sort) {
     for (size_t i = 0; i < 5; ++i) {

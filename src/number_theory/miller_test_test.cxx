@@ -4,8 +4,8 @@
 
 #include <vector>
 
+#include "../test_utils.hpp"
 #include "gtest/gtest.h"
-#include "test_utils.hpp"
 
 void test_miller_test(uint64_t n, bool v) {
     bool ans = miller_test(n);

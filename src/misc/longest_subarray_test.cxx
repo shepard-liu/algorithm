@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "../sorting/test_utils.hpp"
+#include "../test_utils.hpp"
 #include "gtest/gtest.h"
 
 TEST(misc, longest_subarray) {

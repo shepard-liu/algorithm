@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.18)
 
 project(algorithms)
 
+set (CMAKE_CXX_FLAGS "-fstandalone-debug")
 include(cmake/executables.cmake)
 include(cmake/tests.cmake)
 

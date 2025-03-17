@@ -6,7 +6,7 @@
 #include <utility>
 #include <vector>
 
-#include "../sorting/test_utils.hpp"
+#include "../test_utils.hpp"
 #include "gtest/gtest.h"
 
 void test_binary_search(const std::vector<int>& arr, int target) {

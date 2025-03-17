@@ -32,6 +32,7 @@ sudo apt install -y \
     clang-15 \
     clangd-15 \
     lldb-15 \
+    graphviz
 
 # cmake formatter
 pip install cmakelang

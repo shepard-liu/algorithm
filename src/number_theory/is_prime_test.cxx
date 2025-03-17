@@ -2,8 +2,8 @@
 
 #include <vector>
 
+#include "../test_utils.hpp"
 #include "gtest/gtest.h"
-#include "test_utils.hpp"
 
 void test_is_prime(uint64_t n, bool prime) {
     bool ans = is_prime(n);

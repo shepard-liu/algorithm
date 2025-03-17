@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-#include "test_utils.hpp"
+#include "../test_utils.hpp"
 
 TEST(strings, naive_string_match) {
     for (auto [str, substr] : String_matching_test_cases) {
