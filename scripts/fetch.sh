@@ -14,6 +14,10 @@ question_id=$1
 api_url="https://leetcode.cn/api/problems/all"
 problems_file="./scripts/data.json"
 
+if [ ! -f "$problems_file" ]; then
+    curl -s "$api_url" > "$problems_file"
+fi
+
 # 解析JSON数据
 question_data=$(jq --arg qid "$question_id" '
     .stat_status_pairs[] | 

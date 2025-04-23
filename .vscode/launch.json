@@ -6,14 +6,11 @@
     "configurations": [
         {
             "type": "lldb",
-            "request": "custom",
-            "name": "LLDB Launch",
-            "targetCreateCommands": [
-                "target create ${command:cmake.launchTargetPath}"
-            ],
-            "processCreateCommands": [
-                "process launch"
-            ],
-        },
+            "request": "launch",
+            "name": "Launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
     ]
 }

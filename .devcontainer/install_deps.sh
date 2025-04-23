@@ -31,6 +31,7 @@ sudo apt install -y \
 sudo apt install -y \
     clang-15 \
     clangd-15 \
+    clang-format-15 \
     lldb-15 \
     graphviz
 

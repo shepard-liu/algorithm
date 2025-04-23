@@ -1,5 +1,6 @@
 {
     "clangd.path": "/usr/bin/clangd-15",
+    "clang-format.executable": "/usr/bin/clang-format-15",
     "c-cpp-flylint.standard": [
         "c++17"
     ],

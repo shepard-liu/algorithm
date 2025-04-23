@@ -10,6 +10,6 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
     fi
 
 # install dependencies
-RUN chmod +x /_tmp/install_deps.sh && /bin/bash -c /_tmp/install_deps.sh
+RUN /bin/bash -c /_tmp/install_deps.sh
 
 RUN rm -rf /_tmp/
