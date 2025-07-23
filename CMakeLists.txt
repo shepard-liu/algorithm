@@ -6,6 +6,9 @@ set (CMAKE_CXX_FLAGS "-fstandalone-debug")
 include(cmake/executables.cmake)
 include(cmake/tests.cmake)
 
+# iterators, ranges
+find_package(Boost REQUIRED)
+
 find_package(GTest REQUIRED QUIET)
 enable_testing()
 

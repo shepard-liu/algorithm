@@ -9,7 +9,8 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
     chmod +x /_tmp/reinstall-cmake.sh && /_tmp/reinstall-cmake.sh ${REINSTALL_CMAKE_VERSION_FROM_SOURCE}; \
     fi
 
+
 # install dependencies
-RUN /bin/bash -c /_tmp/install_deps.sh
+RUN chmod +x /_tmp/install_deps.sh && /bin/bash -c /_tmp/install_deps.sh
 
 RUN rm -rf /_tmp/

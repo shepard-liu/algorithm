@@ -25,6 +25,7 @@ sudo apt update
 
 # install dev dependencies
 sudo apt install -y \
+    libboost1.74-all-dev \
     libgtest-dev \
 
 # install dev tools
